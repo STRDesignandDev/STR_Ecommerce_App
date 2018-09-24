@@ -17,8 +17,7 @@ html, body {
 }
 
 .wrapper{
-  min-height: 100%;
-  margin-bottom: -80px;
+  min-height: calc(100vh - 80px);
   padding-top: 100px;
 }
 
@@ -42,7 +41,6 @@ html, body {
 }
 
 .topnav{
-  padding-top: 5%;
   padding-bottom: auto;
 }
 
@@ -68,10 +66,15 @@ html, body {
     text-decoration: none;
 }
 
-.footer, .page-wrap:after {
+.footer{
   height: 80px;
-}
-
-.footer {
+  position: fixed;
+  bottom: 0;
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 110%;
   background: black;
+  color: white;
+  padding-left: 10%;
+  padding-top: 10px;
 }
