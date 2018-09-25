@@ -1,7 +1,25 @@
+
+
 .product_table{
   background: gray;
 }
 
 .product_body{
-  background: green;
+  background-color: black;
+  margin: 10px;
+}
+
+.product_info{
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.product_image img{
+  width:100%;
+  height: auto;
+  padding: 10 10 10 0;
+}
+
+.nopadding {
+   padding: 0 !important;
 }

@@ -16,14 +16,18 @@ html, body {
   height: 100%;
 }
 
+h1{
+  padding-bottom: 30px;
+}
+
 .wrapper{
   min-height: calc(100vh - 80px);
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .contentwrapper{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 8%;
+  margin-right: 8%;
   padding-bottom: 80px;
 }
 
@@ -34,6 +38,7 @@ html, body {
   background: black;
   top: 0;
   position: fixed;
+  z-index: 20;
 }
 
 .logo{
