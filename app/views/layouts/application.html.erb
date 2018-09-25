@@ -16,12 +16,14 @@
   <body>
 
     <nav class="header">
+      <div class="logo">
+        <%= image_tag("dumbbirdlogo.svg", class: "img-responsive") %>
+      </div>
       <ul class="topnav">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", simple_pages_about_path %></li>
         <li><%= link_to "Contact", simple_pages_contact_path %></li>
         <li><%= link_to "Products", products_path %></li>
-
       </ul>
     </nav>
 

@@ -2,9 +2,9 @@
 
 <h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
+<table class="product_table">
+  <thead class="product_info">
+    <tr class>
       <th>Name</th>
       <th>Description</th>
       <th>Image url</th>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="product_body">
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>

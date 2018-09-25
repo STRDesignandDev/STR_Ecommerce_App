@@ -27,10 +27,6 @@ html, body {
   padding-bottom: 80px;
 }
 
-.page-wrap:after {
-  content: "";
-  display: block;
-}
 
 .header{
   width: 100%;
@@ -40,39 +36,48 @@ html, body {
   position: fixed;
 }
 
+.logo{
+  width: 33%;
+  float: left;
+}
+
+.logo img{
+  padding-left: 15px;
+  padding-top: 15px;
+  max-height: 55px;
+}
+
 .topnav{
   padding-bottom: auto;
 }
 
-.topnav ul {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
+.topnav{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
 }
 
 .topnav li {
-    float: right;
-    list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 .topnav li a {
-    display: block;
-    color: white;
-    font-family: 'Amaranth', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }
 
 .footer{
   height: 80px;
-  position: fixed;
+  // position: fixed;
   bottom: 0;
-  margin-left: -5%;
-  margin-right: -5%;
-  width: 110%;
+  width: 100%;
   background: black;
   color: white;
   padding-left: 10%;
