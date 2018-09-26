@@ -8,7 +8,7 @@
      <% @products.each do |product| %>
       <div class="col-md-4 col-sm-6 nopadding">
         <div class="product_body">
-          <div class="product_image"></div>
+          <div class="product_image"><%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %></div>
           <div class="product_info">
             <a><h2><%= product.name %></h2></a>
             <p>Description: <%= product.description %></p>
