@@ -1,3 +1,3 @@
-class orders < ApplicationRecord
+class Orders < ApplicationRecord
   belongs_to :products
 end
