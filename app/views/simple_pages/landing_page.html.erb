@@ -6,7 +6,7 @@
         <div class="product_body">
           <div class="product_image"><%= image_tag(@featured_product.image_url, class: "img-fluid") unless @featured_product.image_url.nil? %></div>
           <div class="product_info">
-            <a><h2><% @featured_product.name %></h2></a>
+            <a><h2><%= @featured_product.name %></h2></a>
             <p>Description: <%= @featured_product.description %></p>
             <p>Color: <%= @featured_product.color %></p>
             <p>$<%= @featured_product.price %></p>
