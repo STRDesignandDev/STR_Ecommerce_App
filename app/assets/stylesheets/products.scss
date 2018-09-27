@@ -57,6 +57,10 @@
     border-radius: 5px;
 }
 
+.thumbnail{
+  max-width: 250px;
+}
+
 .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover{
   opacity: .2;
   width: 15%;

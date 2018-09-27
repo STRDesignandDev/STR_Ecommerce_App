@@ -24,7 +24,7 @@
                       <h1><%= product.name %></h1>
                       <h5>Description: <%= product.description %></h5>
                       <h5>Color: <%= product.color %></h5>
-                      <h5>$<%= product.price %></h5>
+                      <h5><%= number_to_currency(product.price/100.to_f) %></h5>
                     </div>
                   </div>
                 </div>

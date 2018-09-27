@@ -5,7 +5,7 @@
       <a><h2><%= product.name %></h2></a>
       <p>Description: <%= product.description %></p>
       <p>Color: <%= product.color %></p>
-      <p>$<%= product.price %></p>
+      <p><%= number_to_currency(product.price/100.to_f) %></p>
       <div class="editing_options">
         <p><%= link_to 'Show', product %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>

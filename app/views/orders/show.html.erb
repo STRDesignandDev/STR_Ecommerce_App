@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Order Information</h2>
+  <h5>Order ID: </h5>
+  <p><%= @order.id %></p>
+  <h5>Product Name: </h5>
+  <%= image_tag(@order.product.image_url, class: "img-fluid thumbnail") unless @order.product.image_url.nil? %>
+  <p><%= @order.product.name %>  </p>
+  <h5>Product Price: </h5>
+  <p><%= number_to_currency(@order.product.price/100.to_f) %></p>
+  <h5>Total Price: </h5>
+  <p><%= number_to_currency(@order.total/100.to_f) %></p>
+</div>
