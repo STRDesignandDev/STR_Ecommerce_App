@@ -1,17 +1,13 @@
 
 
-.product_table{
-  background: gray;
-}
-
 .product_body{
-  background-color: black;
   margin: 10px;
 }
 
-.product_info{
-  padding-left: 10px;
-  padding-bottom: 10px;
+.product_info h2{
+  padding: 7px;
+  background: black;
+  color: white;
 }
 
 .product_image img{
@@ -22,4 +18,46 @@
 
 .nopadding {
    padding: 0 !important;
+}
+
+.carousel-inner img{
+  width: 100%;
+}
+
+.carousel{
+  width: 100%;
+
+}
+
+.carousel-control{
+  width: 100%;
+}
+
+.carousel-caption{
+  font-size: 2em;
+  background-color: black;
+  position: relative;
+  left: 0;
+  bottom:0;
+}
+
+.carousel-indicators{
+  bottom:-80px;
+}
+
+.carousel-indicators .active{
+    background-color: black;
+}
+
+.carousel-indicators li{
+    background-color: grey;
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover{
+  opacity: .2;
+  width: 15%;
 }

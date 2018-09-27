@@ -1,4 +1,9 @@
-h1, h2, h3{
+h1{
+  font-family: 'Amaranth', sans-serif;
+  color: #7c870e;
+}
+
+h2, h3, h4, h5{
   font-family: 'Amaranth', sans-serif;
   color: #845b25;
 }
@@ -6,6 +11,7 @@ h1, h2, h3{
 p, a{
   font-family: 'Quicksand', sans-serif;
   color: #7c870e;
+  margin-bottom: .5rem;
 }
 
 * {

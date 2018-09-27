@@ -2,30 +2,12 @@
 
 <h1>Products</h1>
 
-
 <div class="container-fluid">
   <div class="row">
-     <% @products.each do |product| %>
-      <div class="col-md-4 col-sm-6 nopadding">
-        <div class="product_body">
-          <div class="product_image"><%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %></div>
-          <div class="product_info">
-            <a><h2><%= product.name %></h2></a>
-            <p>Description: <%= product.description %></p>
-            <p>Color: <%= product.color %></p>
-            <p>$<%= product.price %></p>
-            <div class="editing_options">
-              <p><%= link_to 'Show', product %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <% @products.each do |product| %>
+      <%= render product %>
     <% end %>
   </div>
 </div>
-
-
-
-
 
 <%= link_to 'New Product', new_product_path %>
