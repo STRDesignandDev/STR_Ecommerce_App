@@ -14,6 +14,13 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+
+    respond_to do |format|
+      format.html { redirect_to "/products", notice: 'Order removed from cart.' }
+      format.json { head :no_content }
+    end
   end
+
+
 
 end

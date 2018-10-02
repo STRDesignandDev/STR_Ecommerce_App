@@ -8,6 +8,10 @@
       </h5>
       <p><%= order.product.description %></p>
       <strong><%= number_to_currency(order.product.price/100.to_f) %></strong>
-    </div><!-- /col -->
+      <div>
+        <%= link_to 'Keep Shopping |', products_path %>
+        <%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %><!-- /col -->
+      </div>
+    </div>
   <% end %>
 </div>
