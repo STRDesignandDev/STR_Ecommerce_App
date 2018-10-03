@@ -1,2 +1,21 @@
-<h1>Contact our store</h1>
-<p>But why would you? We don't sell anything yet</p>
+<h1>Contact Us</h1>
+
+<%= flash[:notice] %>
+
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+  <div class="form-group form-row">
+    <div class="form-control col-sm-6">
+      <%= form.label :name %>
+      <%= form.text_field :name, placeholder: "Enter Name" %>
+    </div>
+    <div class="form-control col-sm-6">
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: "Enter Email" %>
+    </div>
+    <div class="form-control col-sm-12">
+        <%= form.label :message %>
+        <%= form.text_area :message, placeholder: "Enter Message", rows: 5 %>
+    </div>
+  </div>
+<%= form.submit "Send", class: "form_label" %>
+<% end %>
