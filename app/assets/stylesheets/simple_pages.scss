@@ -1,10 +1,10 @@
 h1{
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #7c870e;
 }
 
 h2, h3, h4, h5{
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #845b25;
 }
 
@@ -28,7 +28,7 @@ h1{
 
 .wrapper{
   min-height: calc(100vh - 80px);
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .contentwrapper{
@@ -40,17 +40,32 @@ h1{
 
 .header{
   width: 100%;
-  height: 40px;
+  height: 53px;
   background: black;
   top: 0;
   position: fixed;
   z-index: 20;
 }
 
+.searchbar {
+  width: 100%;
+  height: 36px;
+  background: rgba(134, 200, 0, .9);
+  top: 53px;
+  position: fixed;
+  z-index: 20;
+}
+
+.searchbox{
+  float: right;
+  padding-top: 6px;
+  padding-right: 6px;
+}
+
 .logo{
   width: 33%;
   float: left;
-  padding-top: 4px;
+  padding-top: 8px;
 }
 
 .logo img{
@@ -67,7 +82,7 @@ h1{
   padding: 0;
   overflow: hidden;
   float: right;
-  padding-top: 9px;
+  padding-top: 17px;
   padding-right: 15px;
 }
 
@@ -79,7 +94,7 @@ h1{
 .topnav li a {
   display: block;
   color: white;
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.2em;
   text-align: center;
   padding-left: 16px;
@@ -101,4 +116,26 @@ h1{
   width: 20%;
   height: 40px;
   margin-left: 40%;
+}
+
+.form-control {
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: black;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: white;
+  width: 90%;
+}
+
+.form-control input{
+  width: 100%;
+}
+
+.form-control textarea{
+  width: 100%;
 }
