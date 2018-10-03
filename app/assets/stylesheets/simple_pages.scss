@@ -118,25 +118,30 @@ h1{
   margin-left: 40%;
 }
 
+.form-style{
+  background-color: black;
+  padding: 5px;
+  font-family: 'Quicksand', sans-serif;
+}
+
 .form-control {
-  padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #495057;
-  background-color: black;
   background-clip: padding-box;
   border: none;
   border-radius: 0;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   color: white;
-  width: 90%;
-  margin-bottom: 15px;
 }
 
-.form-control input{
+.form-style input{
   width: 100%;
 }
 
-.form-control textarea{
+.form-style textarea{
   width: 100%;
+}
+
+div.field, div.actions {
+margin-bottom: 0px;
 }
