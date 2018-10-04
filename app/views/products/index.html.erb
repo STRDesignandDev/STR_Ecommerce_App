@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Products</h1>
+
 
 <div class="container-fluid">
   <div class="row">
@@ -10,4 +9,6 @@
   </div>
 </div>
 
+
+<%= flash[:notice] %>
 <%= link_to 'New Product', new_product_path %>

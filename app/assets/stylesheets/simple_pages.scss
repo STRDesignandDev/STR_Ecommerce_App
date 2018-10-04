@@ -10,8 +10,10 @@ h2, h3, h4, h5{
 
 p, a{
   font-family: 'Quicksand', sans-serif;
-  color: #7c870e;
+  font-size: 1.1em;
+  color: black;
   margin-bottom: .5rem;
+  padding-right: 0px;
 }
 
 * {
@@ -65,7 +67,7 @@ h1{
 .logo{
   width: 33%;
   float: left;
-  padding-top: 8px;
+  padding-top: 14px;
 }
 
 .logo img{
@@ -82,7 +84,7 @@ h1{
   padding: 0;
   overflow: hidden;
   float: right;
-  padding-top: 17px;
+  padding-top: 20px;
   padding-right: 15px;
 }
 
@@ -144,4 +146,14 @@ h1{
 
 div.field, div.actions {
 margin-bottom: 0px;
+}
+
+.alert{
+  position: fixed;
+  margin-left: 30%;
+  margin-top: 30%;
+  z-index: 20;
+  background-color: white;
+  color: red;
+  padding-left: 20px;
 }
