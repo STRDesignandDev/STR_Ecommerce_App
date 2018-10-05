@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
+
   # GET /products
   # GET /products.json
   def index

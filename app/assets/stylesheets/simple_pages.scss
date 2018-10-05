@@ -1,5 +1,5 @@
 h1{
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Alegreya Sans SC', sans-serif;
   color: #7c870e;
 }
 
@@ -28,13 +28,13 @@ h1{
 }
 
 .wrapper{
-  min-height: calc(100vh - 80px);
-  padding-top: 100px;
+  min-height: calc(100vh - 50px);
+  padding-top: 115px;
 }
 
 .contentwrapper{
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding-bottom: 80px;
 }
 
@@ -103,13 +103,13 @@ h1{
 }
 
 .footer{
-  height: 80px;
+  height: 50px;
   // position: fixed;
   bottom: 0;
   width: 100%;
   background: black;
   color: white;
-  padding-left: 10%;
+  padding-left: 15px;
   padding-top: 10px;
 }
 
@@ -155,4 +155,9 @@ margin-bottom: 0px;
   background-color: white;
   color: red;
   padding-left: 20px;
+}
+
+#order-body{
+  padding:20px;
+  border: .5px solid grey;
 }
