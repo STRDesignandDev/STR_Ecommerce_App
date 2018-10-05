@@ -12,3 +12,15 @@ Order.create(user_id: "1", product_id: "1", total: "1000")
 Order.create(user_id: "1", product_id: "1", total: "1000")
 
 Order.create(user_id: "1", product_id: "1", total: "1000")
+
+Order.create(user_id: "2", product_id: "2", total: "1000")
+
+Order.create(user_id: "2", product_id: "2", total: "1000")
+
+Order.create(user_id: "2", product_id: "2", total: "1000")
+
+Order.create(user_id: "3", product_id: "3", total: "1000")
+
+Order.create(user_id: "3", product_id: "3", total: "1000")
+
+Order.create(user_id: "3", product_id: "3", total: "1000")
