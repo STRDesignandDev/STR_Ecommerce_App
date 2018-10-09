@@ -1,0 +1,22 @@
+<% if signed_in? %>
+  <h2>Add a review:</h2>
+    <div class="product-reviews-form">
+      <%= form_for([@product, @product.comments.build]) do |f| %>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <h4>Comments</h4>
+            <%= f.text_area :body %>
+          </div>
+          <div class="col-12 col-sm-6">
+            <h4>Bird Score</h4>
+            <div class="rating"></div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div id="review_submit_btn">
+              <%= f.submit "Submit" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% end %>

@@ -16,3 +16,4 @@
 //= require jquery3
 //= require_tree .
 //= require toastr
+//= require jquery.raty.js

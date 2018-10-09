@@ -1,7 +1,10 @@
 
 
 .product_body{
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 0px;
 }
 
 
@@ -70,4 +73,46 @@
 .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover{
   opacity: .2;
   width: 15%;
+}
+
+#comment_body{
+  width: 90%;
+}
+
+.product-reviews-form{
+  margin-bottom: 20px;
+  border: .5px solid #f7f7f7;
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 1%, rgba(224,224,224,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 1%,rgba(224,224,224,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 1%,rgba(224,224,224,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.product-reviews{
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 1%, rgba(224,224,224,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 1%,rgba(224,224,224,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 1%,rgba(224,224,224,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  padding: 10px;
+  border-top: .1px dashed black;
+}
+
+.rating_inner{
+  padding-left: 40px;
+}
+.rating_inner img{
+  width: 20px;
+}
+
+.comment_text{
+  display: block;
+  width: 100%;
+}
+
+.editing_options{
+  text-align: right;
+  margin-top: 15px;
 }
