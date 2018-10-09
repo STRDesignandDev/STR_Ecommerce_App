@@ -2,20 +2,26 @@
   <div class="col-12 col-sm-6">
     <div class="product_body">
       <div><%= link_to image_tag(@product.image_url, class: "img-fluid"), @product unless @product.image_url.nil? %></div>
-      <div class="product_info">
+      <div class="product_title">
         <h2><%= @product.name %></h2>
       </div>
     </div>
   </div>
     <div class="col-12 col-sm-6 product_info">
-      <p>Description: <%= @product.description %></p>
-      <p>Color: <%= @product.color %></p>
-      <p><%= number_to_currency(@product.price/100.to_f) %></p>
+      <div class="inline-pad">
+        <h5 class="inline">Description:</h5>   <p  class="inline"> <%= @product.description %></p>
+      </div>
+      <div class="inline-pad">
+        <h5 class="inline">Color:</h5>   <p  class="inline"><%= @product.color %></p>
+      </div>
+      <div class="inline-pad">
+        <h5 class="inline">Price:</h5>   <p  class="inline"><%= number_to_currency(@product.price/100.to_f) %></p>
+      </div>
         <div>
-          <h5>Review from a good customer:</h5> <%= @product.highest_rating_comment.body unless @product.highest_rating_comment.body.nil?%>
+          <h5>Review from a good customer:</h5><p> <%= @product.highest_rating_comment.body unless @product.highest_rating_comment.body.nil?%></p>
         </div>
         <div>
-          <h5>Review from some jerk: </h5> <%= @product.lowest_rating_comment.body%>
+          <h5>Review from some jerk: </h5> <p><%= @product.lowest_rating_comment.body%></p>
         </div>
         <div>
           <h5>Average Bird Score: </h5><div class="rated" data-score="<%= @product.average_rating %>"></div>

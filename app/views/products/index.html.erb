@@ -7,5 +7,8 @@
     <% end %>
   </div>
 </div>
-
 <%= link_to 'New Product', new_product_path %>
+
+<div class="page_bar">
+  <%= will_paginate @comments %>
+</div>
