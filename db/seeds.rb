@@ -6,25 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-Order.create(user_id: "1", product_id: "1", total: "1000")
-
-Order.create(user_id: "1", product_id: "1", total: "1000")
-
-Order.create(user_id: "1", product_id: "1", total: "1000")
-
-Order.create(user_id: "2", product_id: "2", total: "1000")
-
-Order.create(user_id: "2", product_id: "2", total: "1000")
-
-Order.create(user_id: "2", product_id: "2", total: "1000")
-
-Order.create(user_id: "3", product_id: "3", total: "1000")
-
-Order.create(user_id: "3", product_id: "3", total: "1000")
-
-Order.create(user_id: "3", product_id: "3", total: "1000")
-
-Order.create(user_id: "4", product_id: "4", total: "1000")
-
-Comment.create(body: "what a bird", rating: "5")
+Comment.create!(user: User.first, product: Product.first, rating: 1, body: "bad")
+Comment.create!(user: User.first, product: Product.first, rating: 4, body: "nice")
+Comment.create!(user: User.first, product: Product.first, rating: 2, body: "meh")
