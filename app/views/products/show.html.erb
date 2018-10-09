@@ -1,4 +1,23 @@
-<%= render @product %>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="product_body">
+      <div><%= link_to image_tag(@product.image_url, class: "img-fluid"), @product unless @product.image_url.nil? %></div>
+      <div class="product_info">
+      <h2><%= @product.name %></h2>
+      </div>
+    </div>
+  </div>
+    <div class="col-12 col-sm-6">
+      <p>Description: <%= @product.description %></p>
+      <p>Color: <%= @product.color %></p>
+      <p><%= number_to_currency(@product.price/100.to_f) %></p>
+        <div class="editing_options">
+          <p><%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Add To Cart', orders_path, method: :create, data: { confirm: 'Are you sure?' } %></p>
+          <div><%= @product.highest_rating_comment %></div>
+          <%= link_to 'Edit', edit_product_path(@product) %> |
+          <%= link_to 'Back', products_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

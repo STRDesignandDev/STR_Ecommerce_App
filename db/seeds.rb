@@ -26,3 +26,5 @@ Order.create(user_id: "3", product_id: "3", total: "1000")
 Order.create(user_id: "3", product_id: "3", total: "1000")
 
 Order.create(user_id: "4", product_id: "4", total: "1000")
+
+Comment.create(body: "what a bird", rating: "5")

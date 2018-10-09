@@ -5,6 +5,8 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :manage, User, id: user.id
     can :read, Order, user_id: user.id
+    can :create, Order, user_id: user.id
+    can :destroy, Order, user_id: user.id
   end
 
 end

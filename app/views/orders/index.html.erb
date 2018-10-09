@@ -2,10 +2,9 @@
 <div class="row">
   <% @orders.each do |order| %>
     <div class="col-sm-6 col-md-4" id="order-body">
-      <%= image_tag(order.product.image_url, class: "img-fluid") %>
+      <%= link_to image_tag(order.product.image_url, class: "img-fluid"), order %>
       <h5>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order %>
+        <%=order.product.name%>
       </h5>
       <p><%= order.product.description %></p>
       <strong><%= number_to_currency(order.product.price/100.to_f) %></strong>
