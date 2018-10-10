@@ -1,4 +1,58 @@
-<h1>Welcome to some sort of store</h1>
-<h3>We aren't sure what we sell yet, sorry :( Maybe we sell birds, does that seem like a pretty good idea?</h3>
-<p>We have a clock for you to use, so that is pretty great. The date and time is <%= Time.now %></p>
-<%= image_tag("rarebird.jpg", class: "img-fluid") %>
+<div class="bird_welcome">
+  <%= image_tag("birds.svg") %>
+</div>
+<div class="bird_msg_wrapper">
+  <div class="first_bird">
+    <%= image_tag("first_bird.png") %>
+  </div>
+  <div class="mkt_messages">
+    <div class="row">
+      <div class="col-sm-4 mkt_msg">
+        <div class="mkt_msg_wrapper">
+          <%= image_tag("portable.svg") %>
+          <h4>Take these birds anywhere. When you buy from us, the only limit to your bird's travel capabilities is your imagination.</h4>
+        </div>
+      </div>
+      <div class="col-sm-4 mkt_msg">
+        <div class="mkt_msg_wrapper">
+          <%= image_tag("affordable.svg") %>
+          <h4>Any income bracket, any budget. Our price match guarantee: Find a bird cheaper elsewhere and we'll give you the bird for free!</h4>
+        </div>
+      </div>
+      <div class="col-sm-4 mkt_msg">
+        <div class="mkt_msg_wrapper">
+          <%= image_tag("real.svg") %>
+          <h4>These birds are not fake. If you order a bird, you will receive a bird. That's our promise to you. <p class="tiny-disclaimer">(birds are not actually real)</p></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="specials">
+    <h1>Birds of the Day! Get 'em whilst they hot!</h1>
+    <div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <% @products.each do |product| %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="<%= " active" if product == @products.first %>"></li>
+            <% end %>
+          </ol>
+            <div class="carousel-inner">
+              <% @products.each do |product| %>
+                <div class="carousel-item<%= " active" if product == @products.first %>">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <%= image_tag(product.image_url) %>
+                      <div class="carousel-caption d-none d-md-block">
+                        <%= product.name %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

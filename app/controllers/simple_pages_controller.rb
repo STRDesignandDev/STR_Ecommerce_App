@@ -1,7 +1,6 @@
 class SimplePagesController < ApplicationController
-  def landing_page
-    @featured_product = Product.first
-    @products = Product.all
+  def index
+    @products = Product.limit(3).order("RANDOM()")
   end
 
   def thank_you
