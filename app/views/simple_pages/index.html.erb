@@ -28,8 +28,10 @@
     </div>
   </div>
 
+
   <div class="specials">
-    <h1>Birds of the Day! Get 'em whilst they hot!</h1>
+    <h1>Birds of the Day!</h1>
+    <h3>Get 'em whilst they hot!</h3>
     <div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -42,7 +44,7 @@
                 <div class="carousel-item<%= " active" if product == @products.first %>">
                   <div class="row">
                     <div class="col-sm-12">
-                      <%= image_tag(product.image_url) %>
+                      <%= link_to image_tag(product.image_url), product_path(product) %>
                       <div class="carousel-caption d-none d-md-block">
                         <%= product.name %>
                       </div>
@@ -51,8 +53,119 @@
                 </div>
               <% end %>
             </div>
+          </div>
+        </div>
+      </div>
 
+      <h1>Shop Collections</h1>
+      <h3>Birds for every style, occasion, and political affiliation.</h3>
+      <div class="shop_collections">
+        <div class="row">
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Good Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("good.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Bad Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("bad.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Smart Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("smart.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Dumb Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("dumb.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Cheap Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("cheap.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection col-sm-6">
+            <div class="collection_wrapper">
+              <div class="row">
+                <div class="col-6 collection_text">
+                  <h1>Pricey Birds</h1>
+                </div>
+                <div class="col-6">
+                  <%= image_tag("expensive.jpg") %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <h1>Join the club!</h1>
+      <h3>It is relatively painless.</h3>
+      <div class="sign_up_section">
+        <div class="row mkt_messages_2">
+          <div class="col-sm-8 mkt_msg">
+            <div class="mkt_msg_wrapper">
+              <h1>A world of birds, at your fingertips.<h1>
+              <h3>Sign up today and you will recieve.<h3>
+                <ul class="sign_up">
+                  <li>Free lifelong membership that you cannot cancel at any time.</li>
+                  <li>Deals and discounts on gently used and emotionaly damaged birds.</li>
+                  <li>Premium access to exclusive bird news.</li>
+                  <li>Contribute with ratings and reviews, totally unmoderated!</li>
+                  <li>Reduced shipping rates for orders of 50+ birds.</li>
+                  <li>Custom recommendations, based on your social media habits and personal data.</li>
+            </div>
+          </div>
+          <div class="col-sm-4 mkt_msg">
+            <div class="mkt_msg_wrapper">
+              <button class="sign_up_landing_btn">Create Account</button>
+              <button class="sign_up_landing_btn">Log In</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
