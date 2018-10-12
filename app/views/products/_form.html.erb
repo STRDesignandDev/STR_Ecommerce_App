@@ -22,15 +22,15 @@
 
     <div class="field form-control col-sm-4">
       <div class="form-style">
-        <%= form.label :color %>
-        <%= form.text_field :color %>
+        <%= form.label :price %>
+        <%= form.text_field :price %>
       </div>
     </div>
 
-    <div class="field form-control col-sm-4">
+    <div class="field form-control col-4">
       <div class="form-style">
-        <%= form.label :price %>
-        <%= form.text_field :price %>
+        <%= form.label :type %>
+        <%= form.select :birdtype, [['Good','good'],['Bad','bad'],['Smart','smart'], ['Dumb','dumb'],['Cheap','cheap'],['Expensive','expensive']] %>
       </div>
     </div>
 
