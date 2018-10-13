@@ -18,7 +18,7 @@
         <h5 class="inline">Price:</h5>   <p  class="inline"><%= number_to_currency(@product.price/100.to_f) %></p>
       </div>
         <div>
-          <% if !@product.comments.empty? %><p>Test</p>
+          <% if !@product.comments.empty? %>
           <h5>Review from a good customer:</h5><p> <%= @product.highest_rating_comment.body%></p>
         </div>
         <div>
