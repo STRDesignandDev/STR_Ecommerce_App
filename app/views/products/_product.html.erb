@@ -1,11 +1,17 @@
-<div class="col-md-4 col-sm-6 nopadding">
+<div class="col-md-4 col-sm-6">
   <div class="product_body">
     <div class="product_image"><%= link_to image_tag(product.image_url, class: "img-fluid"), product unless product.image_url.nil? %></div>
     <div class="product_title">
       <h2><%= product.name %></h2>
-      <p>Description: <%= product.description %></p>
-      <p>Type: <%= product.birdtype %></p>
-      <p><%= number_to_currency(product.price/100.to_f) %></p>
+      <div class="inline-pad">
+        <h5 class="inline">Description: </h5><p class="inline"><%= product.description %></p>
+      </div>
+      <div class="inline-pad">
+        <h5 class="inline">Type: </h5><p class="inline"><%= product.birdtype %></p>
+      </div>
+      <div class="inline-pad">
+        <h5 class="inline">Price: </h5><p class="inline"><%= number_to_currency(product.price/100.to_f) %> </p>
+      </div>
     </div>
   </div>
 </div>

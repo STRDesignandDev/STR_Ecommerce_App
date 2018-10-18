@@ -18,7 +18,15 @@ class CommentsController < ApplicationController
 
 
   def destroy
+    @comment = Comment.find(params[:id])
+    product = @comment.product
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to product, notice: 'Bird review successfully removed.' }
+      format.json { head :no_content }
+    end
   end
+
 
   private
 

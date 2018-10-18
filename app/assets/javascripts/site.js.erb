@@ -16,3 +16,19 @@ $(document).on('turbolinks:load', function(){
     }
   });
 });
+
+// Mobile Nav
+
+$( ".hamburger" ).on('click', function() {
+  $('.mobile_nav_wrapper').animate({height: '100%'});
+  $(".hamburger").hide();
+  $(".nav_close").show();
+  $(".mobile_nav").show(200);
+});
+
+$( ".nav_close").on('click', function() {
+  $(".nav_close").hide();
+  $(".hamburger").show();
+  $('.mobile_nav_wrapper').animate({height: '0%'});
+  $(".mobile_nav").hide(200);
+});

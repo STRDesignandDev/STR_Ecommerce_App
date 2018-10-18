@@ -19,12 +19,15 @@
   </head>
 
   <body>
-
+  <div class="wrapper">
     <nav class="header">
       <div class="logo">
         <%= image_tag("whatdoweselllogo.svg", class: "img-responsive") %>
       </div>
-      <ul class="topnav">
+      <div class="mobile_logo">
+        <%= image_tag("whatdoweselllogo_mobile.svg", class: "img-responsive") %>
+      </div>
+      <ul class="topnav desk_nav">
         <li class="nav-item"><%= link_to "Home", simple_pages_index_path %></li>
         <li class="nav-item"><%= link_to "About", simple_pages_about_path %></li>
         <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
@@ -32,15 +35,38 @@
         <li class="nav-item"><%= link_to "Orders", orders_path %></li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           </li>
           <% else %>
           <li class="nav-item">
-            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+            <%= link_to('Login', new_user_session_path) %>
           </li>
           <% end %>
       </ul>
+      <%= image_tag("hamburger.svg", class: "hamburger") %>
+      <div class="mobile_nav_wrapper">
+        <%= image_tag("nav_close.svg", class: "nav_close") %>
+        <ul class="mobile_nav">
+          <li class="mobile_nav-item"><%= link_to "Home", simple_pages_index_path %></li>
+          <li class="mobile_nav-item"><%= link_to "About", simple_pages_about_path %></li>
+          <li class="mobile_nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
+          <li class="mobile_nav-item"><%= link_to "Products", products_path %></li>
+          <li class="mobile_nav-item"><%= link_to "Orders", orders_path %></li>
+          <% if user_signed_in? %>
+            <li class="mobile_nav-item">
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+            </li>
+            <% else %>
+            <li class="mobile_nav-item">
+              <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
     </nav>
+
+
+
     <nav class="searchbar">
       <div class="searchbox">
         <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
@@ -53,7 +79,7 @@
     <%= javascript_include_tag "application" %>
     <%= custom_bootstrap_flash %>
 
-    <div class="wrapper">
+
 
       <div class="contentwrapper">
         <%= yield %>
@@ -61,9 +87,11 @@
 
     </div>  <!-- end wrapper -->
 
-    <!-- <footer class="footer">
-      &copy; STR Design & Dev 2018 All Rights Reserved
-    </footer> -->
+    <footer class="footer">
+      <div class="footer_content">
+        <p>&copy; STR Design & Dev 2018 All Rights Reserved</p>
+      </div>
+    </footer>
 
 
   </body>

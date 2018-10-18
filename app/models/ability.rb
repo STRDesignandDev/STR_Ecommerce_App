@@ -2,11 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new # guest user (not logged in)
-    can :manage, User, id: user.id
-    can :read, Order, user_id: user.id
-    can :create, Order, user_id: user.id
-    can :destroy, Order, user_id: user.id
+    can :read, :all  # start by defining rules for all users, also not logged ones
+    return unless user.present?
+    can :manage, Order, user_id: user.id # if the user is logged in can manage it's own orders
+    can :create, Comment # logged in users can also create comments
+    return unless user.admin?
+    can :manage, :all # finally we give all remaining permissions only to the admins
   end
-
 end
