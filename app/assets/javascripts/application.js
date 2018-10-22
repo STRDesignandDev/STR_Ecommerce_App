@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require home
+//= require jquery3
 //= require_tree .
 //= require toastr
 //= require jquery.raty.js
