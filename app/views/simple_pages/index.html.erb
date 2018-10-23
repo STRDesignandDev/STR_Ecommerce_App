@@ -7,19 +7,19 @@
   </div>
   <div class="mkt_messages">
     <div class="row">
-      <div class="col-sm-4 mkt_msg">
+      <div class="col-md-4 mkt_msg">
         <div class="mkt_msg_wrapper">
           <%= image_tag("portable.svg") %>
           <h4>Take these birds anywhere. When you buy from us, the only limit to your bird's travel capabilities is your imagination.</h4>
         </div>
       </div>
-      <div class="col-sm-4 mkt_msg">
+      <div class="col-md-4 mkt_msg">
         <div class="mkt_msg_wrapper">
           <%= image_tag("affordable.svg") %>
           <h4>Any income bracket, any budget. Our price match guarantee: Find a bird cheaper elsewhere and we'll give you the bird for free!</h4>
         </div>
       </div>
-      <div class="col-sm-4 mkt_msg">
+      <div class="col-md-4 mkt_msg">
         <div class="mkt_msg_wrapper">
           <%= image_tag("real.svg") %>
           <h4>These birds are not fake. If you order a bird, you will receive a bird. That's our promise to you. <p class="tiny-disclaimer">(birds are not actually real)</p></h4>
@@ -150,7 +150,7 @@
           <div class="col-sm-8 mkt_msg">
             <div class="mkt_msg_wrapper">
               <h1>A world of birds, at your fingertips.<h1>
-              <h3>Sign up today and you will recieve.<h3>
+              <h3>Sign up today and you will receive.<h3>
                 <ul class="sign_up">
                   <li>Free lifelong membership that you cannot cancel at any time.</li>
                   <li>Deals and discounts on gently used and emotionaly damaged birds.</li>
@@ -162,8 +162,8 @@
           </div>
           <div class="col-sm-4 mkt_msg">
             <div class="mkt_msg_wrapper">
-              <button class="sign_up_landing_btn">Create Account</button>
-              <button class="sign_up_landing_btn"><%= link_to('Login', new_user_session_path) %></button>
+              <%= link_to "<div>Sign Up</div>".html_safe, new_user_registration_path, :class => "sign_up_landing_btn" %>
+              <%= link_to "<div>Login</div>".html_safe, new_user_session_path, :class => "sign_up_landing_btn" %>
             </div>
           </div>
         </div>
