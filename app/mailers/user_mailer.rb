@@ -15,4 +15,10 @@ class UserMailer < ApplicationMailer
     UserMailer.contact_form(@email, @name, @message).deliver_now
   end
 
+  def welcome
+   @user = params[:user]
+   @url  = 'http://example.com/login'
+   mail(to: @user.email, subject: 'Welcome to What Do We Sell?')
+ end
+
 end
