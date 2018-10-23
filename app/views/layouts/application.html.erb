@@ -47,19 +47,26 @@
       <div class="mobile_nav_wrapper">
         <%= image_tag("nav_close.svg", class: "nav_close") %>
         <ul class="mobile_nav">
-          <li class="mobile_nav-item"><%= link_to "Home", simple_pages_index_path %></li>
-          <li class="mobile_nav-item"><%= link_to "About", simple_pages_about_path %></li>
-          <li class="mobile_nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
-          <li class="mobile_nav-item"><%= link_to "Products", products_path %></li>
-          <li class="mobile_nav-item"><%= link_to "Orders", orders_path %></li>
-          <% if user_signed_in? %>
-            <li class="mobile_nav-item">
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-            </li>
-            <% else %>
-            <li class="mobile_nav-item">
-              <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-            </li>
+
+          <div class="row">
+              <div class="col-6">
+                <li class="mobile_nav-item"><%= link_to "Home", simple_pages_index_path %></li>
+                <li class="mobile_nav-item"><%= link_to "About", simple_pages_about_path %></li>
+                <li class="mobile_nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
+              </div>
+              <div class="col-6">
+                <li class="mobile_nav-item"><%= link_to "Products", products_path %></li>
+                <li class="mobile_nav-item"><%= link_to "Orders", orders_path %></li>
+                <% if user_signed_in? %>
+                  <li class="mobile_nav-item">
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+                  </li>
+                  <% else %>
+                  <li class="mobile_nav-item">
+                    <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+                  </li>
+              </div>
+            </div>
             <% end %>
         </ul>
       </div>

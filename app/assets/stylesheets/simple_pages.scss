@@ -11,21 +11,21 @@ h3, h4, h5{
 }
 
 h3{
-  font-size: 1.6em;
+  font-size: 1.7em;
 }
 
 h4{
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 
 h5{
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: 450;
 }
 
 p, a{
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: black;
   margin-bottom: .5rem;
   font-weight: 100;
@@ -139,10 +139,14 @@ html, body {
 }
 
 .mobile_nav{
-  margin-left: 30%;
+  margin-left: 10%;
   padding-top: 150px;
   display: none;
   width: 60%;
+}
+
+.mobile_nav_item_wrapper{
+  padding-right: 10%;
 }
 
 .mobile_nav li{
@@ -262,10 +266,14 @@ html, body {
 
 .mkt_messages_2 ul{
   color: black;
-  font-size: .7em;
+  font-size: .8em;
   font-family: 'Quicksand', sans-serif;
   list-style-image: url('../assets/ul_bird_icon.svg');
   font-weight: 300;
+}
+
+.mkt_messages_2 li{
+  padding-bottom: 5px;
 }
 
 .sign_up_section{
@@ -503,4 +511,87 @@ margin-bottom: 0px;
 
 .pad_top{
   padding-top: 30px;
+}
+
+.actions input{
+  background-color: black;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  float: right;
+  width: 75px;
+}
+
+.remember_me{
+  display: block;
+ position: relative;
+ padding-left: 35px;
+ margin-bottom: 12px;
+ cursor: pointer;
+ font-size: 18px;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ float: right;
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 500;
+}
+
+#user_remember_me{
+  float: right;
+  padding-left: 10px;
+}
+
+input[type=checkbox]{
+  position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+/* On mouse-over, add a grey background color */
+.remember_me:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.remember_me input:checked ~ .checkmark {
+    background: black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    background: black;
+}
+
+/* Show the checkmark when checked */
+.remember_me input:checked ~ .checkmark:after {
+    background: black;
+}
+
+/* Style the checkmark/indicator */
+.remember_me .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
