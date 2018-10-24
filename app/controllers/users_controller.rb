@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
   load_and_authorize_resource
+  
 
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.admin?
+      @user = User.all
+    else
+      @users = User.where("id = ?", current_user.id)
+    end
   end
 
   # GET /users/1
