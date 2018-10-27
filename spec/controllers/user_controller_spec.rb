@@ -4,9 +4,9 @@ describe UsersController, type: :controller do
   # let(:user1) { User.create!(first_name: 'Todd', last_name: 'Toddson', email: 'todd@todd.com', password: 'toddtodd') }
   # let(:user2) { User.create!(first_name: 'Bob', last_name: 'Bobson', email: 'bob@bob.com', password: 'bobbob') }
   before do
-       @user = FactoryBot.create(:user)
-       @admin = FactoryBot.create(:admin)
-   end
+   @user = FactoryBot.create(:user)
+   @admin = FactoryBot.create(:admin)
+  end
 
 
   describe 'Get #show' do

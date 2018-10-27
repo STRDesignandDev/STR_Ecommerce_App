@@ -30,14 +30,25 @@
         </div>
         <% end %>
         <div class="editing_options">
-          <p><%= link_to 'Edit', edit_product_path(@product), class: "admincreate_text" %> | <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "warning_text" %> |
-          <%= link_to 'Back', products_path %> | <%= link_to image_tag("add_to_cart.svg"), orders_path, method: :create, data: { confirm: 'Are you sure?' } %></p>
+          <p>
+          <%= link_to 'Edit', edit_product_path(@product), class: "admincreate_text" %> |
+          <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "warning_text" %> |
+          <%= link_to 'Back', products_path %> |
 
+<!-- POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg -->
 
+          <%= form_with(url: '/orders/create') do |form| %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+          <%= link_to image_tag("add_to_cart.svg"), orders_path(:product_id => @product.id, :price => @product.price), method: :create %>
+          <% end %>
 
+<!-- END POTENTIALLY BAD CODE -->
+
+          </p>
         </div>
       </div>
     </div>
+
     <div class="col-12">
       <%= render 'comments' %>
       <%= render 'new_comment' %>

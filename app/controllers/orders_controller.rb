@@ -13,23 +13,36 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+# POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg
+
   def create
-    @order = Order.new(order_params)
-    @order.create
+    @product = Product.find(params[:product_id])
+    # @product = Product.find(params[:price])
+    @user = current_user
+    @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
+
     respond_to do |format|
-      format.html { redirect_to "/products", notice: 'Order added to cart.' }
-      format.json { head :no_content }
+      if @order.save
+        format.html { redirect_to @product, notice: 'Bird Added to Cart' }
+        format.json { render :show, status: :created, location: @product }
+      else
+        format.html {redirect_to products_path, alert: 'Bird not added to cart' }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+# END BAD CODE
 
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to "/orders", notice: 'Order removed from cart.' }
+      format.html { redirect_to "/orders", notice: 'Bird removed from cart, bird is sad.' }
       format.json { head :no_content }
     end
   end
+
 
 
 end

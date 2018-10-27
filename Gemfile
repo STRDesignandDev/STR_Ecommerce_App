@@ -23,6 +23,8 @@ gem 'jquery-rails'
 
 gem 'bootstrap'
 
+gem 'stripe'
+
 gem 'will_paginate', '~> 3.1.1'
 
 gem 'turbolinks', '~> 5'

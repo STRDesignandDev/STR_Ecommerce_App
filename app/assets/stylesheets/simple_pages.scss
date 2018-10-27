@@ -31,6 +31,13 @@ p, a{
   font-weight: 100;
 }
 
+a:hover{
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+}
+
 * {
   margin: 0;
 }
@@ -62,7 +69,7 @@ html, body {
 }
 
 .wrapper{
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
   padding-top: 115px;
   position: relative;
 }
@@ -549,25 +556,28 @@ margin-bottom: 0px;
 }
 
 .remember_me{
-  display: block;
+ display: block;
  position: relative;
  padding-left: 35px;
  margin-bottom: 12px;
+ margin-top: 12px;
  cursor: pointer;
- font-size: 18px;
  -webkit-user-select: none;
  -moz-user-select: none;
  -ms-user-select: none;
  user-select: none;
  float: right;
+ text-align: left;
  font-family: 'Quicksand', sans-serif;
- font-weight: 500;
+ font-size: 1.4em;
+ color: black;
+ margin-bottom: .5rem;
+ font-weight: 100;
+ text-align: right;
+ width: 100%;
+ margin-right: 10px;
 }
 
-#user_remember_me{
-  float: right;
-  padding-left: 10px;
-}
 
 input[type=checkbox]{
   position: absolute;
@@ -579,13 +589,12 @@ input[type=checkbox]{
 
 /* Create a custom checkbox */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     background-color: #ffffff;
     border: 1px solid black;
+    float:right;
+    margin-left: 10px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -619,4 +628,31 @@ input[type=checkbox]{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+
+.login_wrapper{
+  width: 50%;
+  padding: 30px;
+  z-index: -1; /* hide shadow behind image */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 588px){
+  .login_wrapper{
+    width: 100%;
+  }
+}
+
+@media (min-width: 588px){
+  .center-col-6{
+    margin-left: 25%;
+    margin-top: 4%;
+  }
+}
+
+
+.user-links{
+  text-align: right;
+  margin-right: 10px;
 }
