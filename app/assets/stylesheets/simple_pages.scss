@@ -5,7 +5,14 @@ h1, h2{
 
 h3, h4, h5{
   font-family: 'Quicksand', sans-serif;
-  color: #352a0c;
+  color: black;
+  margin-bottom: .5em;
+  font-weight: 500;
+}
+
+.product_info h3, h4, h5{
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: #7c870e;
   margin-bottom: .5em;
   font-weight: 500;
 }
@@ -35,7 +42,7 @@ a:hover{
   background-color: transparent;
   color: black;
   text-decoration: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -655,4 +662,8 @@ input[type=checkbox]{
 .user-links{
   text-align: right;
   margin-right: 10px;
+}
+
+.comment_text p{
+  font-style: italic;
 }

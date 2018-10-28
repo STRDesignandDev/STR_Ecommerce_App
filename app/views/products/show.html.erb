@@ -20,34 +20,53 @@
       </div>
         <div>
           <% if !@product.comments.empty? %>
-          <h5>Review from a good customer:</h5><p> <%= @product.highest_rating_comment.body%></p>
+          <h5>Review from a good customer:</h5><p class="comment_quote">"<%= @product.highest_rating_comment.body%>"</p>
         </div>
         <div>
-          <h5>Review from some jerk: </h5> <p><%= @product.lowest_rating_comment.body%></p>
+          <h5>Review from some jerk: </h5> <p class="comment_quote">"<%= @product.lowest_rating_comment.body%>"</p>
         </div>
         <div>
           <h5>Average Bird Score: </h5><div class="rated" data-score="<%= @product.average_rating %>"></div>
         </div>
         <% end %>
         <div class="editing_options">
+          <% if signed_in? && current_user.admin? %>
           <p>
-          <%= link_to 'Edit', edit_product_path(@product), class: "admincreate_text" %> |
-          <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "warning_text" %> |
-          <%= link_to 'Back', products_path %> |
-
-<!-- POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg -->
-
-          <%= form_with(url: '/orders/create') do |form| %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= link_to image_tag("add_to_cart.svg"), orders_path(:product_id => @product.id, :price => @product.price), method: :create %>
+            <%= link_to 'Edit', edit_product_path(@product), class: "admincreate_text" %> |
+            <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "warning_text" %>
+          </p>
           <% end %>
+        </div>
+
+
+        <div class="row">
+          <div class="shopping_options_btn_wrapper">
+            <div class="shopping_options_btn">
+              <%= link_to image_tag("keep_shopping.svg"), products_path %>
+            </div>
+
+  <!-- POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg -->
+            <div class="shopping_options_btn">
+              <%= form_with(url: '/orders/create') do |form| %>
+              <%= hidden_field_tag(:product_id, @product.id) %>
+              <%= link_to image_tag("add_to_cart.svg"), orders_path(:product_id => @product.id, :price => @product.price), method: :create %>
+              <% end %>
+            </div>
 
 <!-- END POTENTIALLY BAD CODE -->
 
-          </p>
+            <div class="shopping_options_btn">
+              <%= image_tag("buy_bird_now.svg") %>
+              <%= form_with(url: '/payments/create') do |form| %>
+              <%= render partial: "shared/stripe_checkout_button" %>
+              <% end %>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
+
 
     <div class="col-12">
       <%= render 'comments' %>

@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    # @product = Product.find(params[:price])
     @user = current_user
     @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
 
