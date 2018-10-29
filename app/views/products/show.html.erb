@@ -55,12 +55,12 @@
 
 <!-- END POTENTIALLY BAD CODE -->
 
-            <div class="shopping_options_btn">
-              <%= image_tag("buy_bird_now.svg") %>
-              <%= form_with(url: '/payments/create') do |form| %>
-              <%= render partial: "shared/stripe_checkout_button" %>
-              <% end %>
-            </div>
+          <div class="shopping_options_btn" id="buy_bird_now">
+            <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
+            <% end %>
+          </div>
 
           </div>
         </div>
