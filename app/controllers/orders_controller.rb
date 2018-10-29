@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 # POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg
 
   def create
+    byebug
     @product = Product.find(params[:product_id])
     @user = current_user
     @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
