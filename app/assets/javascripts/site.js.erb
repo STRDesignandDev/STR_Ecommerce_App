@@ -36,6 +36,6 @@ $(document).on('turbolinks:load', function() {
 
 // HIDE STRIPE button
 
-  $(function() {
+$(document).on('turbolinks:load', function() {
     $(".stripe-button-el").replaceWith('<button type="submit" class="pay" id="buy_bird_now"><img src="/assets/buy_bird_now.svg"></button>');
   });
