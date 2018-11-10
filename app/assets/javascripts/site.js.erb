@@ -32,12 +32,6 @@ $(document).on('turbolinks:load', function(){
     $(".mobile_nav").hide(200);
   });
 
-// HIDE STRIPE button
-
-  $(function() {
-    $(".stripe-button-el").replaceWith('<button type="submit" class="pay" id="buy_bird_now"><img src="/assets/buy_bird_now.svg"></button>');
-  });
-
 // ELEVATE zoom
 
   $(function(){
@@ -45,3 +39,9 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+// HIDE STRIPE button
+
+  $( document ).ready(function() {
+    $(".stripe-button-el").replaceWith('<button type="submit" class="pay" id="buy_bird_now"><img src="/assets/buy_bird_now.svg"></button>');
+  });
