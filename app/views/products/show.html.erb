@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12 col-sm-6">
     <div class="product_body">
-      <div><%= link_to image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url), @product unless @product.image_url.nil? %></div>
+      <div><%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url)%></div>
       <div class="product_title">
         <h2><%= @product.name %></h2>
       </div>
@@ -41,9 +41,6 @@
 
         <div class="row">
           <div class="shopping_options_btn_wrapper">
-            <div class="shopping_options_btn">
-              <%= link_to image_tag("keep_shopping.svg"), products_path %>
-            </div>
 
   <!-- POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg -->
             <div class="shopping_options_btn">
@@ -60,6 +57,10 @@
             <%= render partial: "shared/stripe_checkout_button" %>
             <%= hidden_field_tag(:product_id, @product.id) %>
             <% end %>
+          </div>
+
+          <div class="shopping_options_btn">
+            <%= link_to image_tag("keep_shopping.svg"), products_path %>
           </div>
 
           </div>
