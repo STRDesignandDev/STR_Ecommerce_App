@@ -3,23 +3,15 @@
   <% if @comments.empty? %>
     <h5>Sorry, no reviews for this bird yet.  Be the first to tell us what you think!</h5>
   <% end %>
-  <% if !@comments.empty? %>
+</div>
+<div class="customer-reviews">
     <% @comments.each do |comment| %>
-        <div class="row product-reviews">
-            <hr>
-            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-            <div class="rating rated rating_inner" data-score="<%= comment.rating %>"></div>
-            <div class="comment_text">
-              <p class="comment_quote">"<%= comment.body %>"</p>
-            </div>
-            <% if signed_in? && current_user.admin? %>
-              <%= link_to image_tag( "delete.svg").html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "warning_text" %>
-            <% end %>
-        </div>
-      <% end %>
-    <div class="page_bar">
-      <p class="paginate_title">More Reviews</p>
-      <%= will_paginate @comments %>
-    </div>
+      <%= render comment %>
     <% end %>
 </div>
+<% if !@comments.empty? %>
+  <div class="page_bar">
+    <p class="paginate_title">More Reviews</p>
+    <%= will_paginate @comments %>
+  </div>
+<% end %>

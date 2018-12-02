@@ -8,16 +8,16 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      @products = Product.search(search_term).paginate(:page => params[:page], :per_page => 3)
+      @products = Product.search(search_term).paginate(:page => params[:page], :per_page => 6)
     else
-      @products = Product.paginate(:page => params[:page], :per_page => 3)
+      @products = Product.paginate(:page => params[:page], :per_page => 6)
     end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
 

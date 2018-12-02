@@ -11,6 +11,7 @@ load_and_authorize_resource
       if @comment.save
         format.html { redirect_to @product, notice: 'Bird review submitted!' }
         format.json { render :show, status: :created, location: @product }
+        format.js
       else
         format.html { redirect_to @product, alert: 'Bird comment and bird score required.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

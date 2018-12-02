@@ -1,0 +1,5 @@
+$("#new_comment").html("You have reviewed a bird, you are a scholar and an upstanding citizen.");
+
+$('.customer-reviews').prepend("<%= j render @comment %>");
+
+$("#average-rating").attr('data-score', "<%= @product.average_rating %>");
