@@ -1,34 +1,36 @@
-<h1><%= @product.name %></h1>
-<div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="product_body">
-      <div><%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url)%></div>
-      <div class="product_title">
-        <h2><%= @product.name %></h2>
+<% cache @product do %>
+  <h1><%= @product.name %></h1>
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <div class="product_body">
+        <div><%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url)%></div>
+        <div class="product_title">
+          <h2><%= @product.name %></h2>
+        </div>
       </div>
     </div>
-  </div>
-    <div class="col-12 col-sm-6 product_info">
-      <div class="inline-pad">
-        <h5 class="inline">Description:</h5>   <p  class="inline"> <%= @product.description %></p>
-      </div>
-      <div class="inline-pad">
-        <h5 class="inline">Type: </h5>   <p  class="inline"><%= @product.birdtype %></p>
-      </div>
-      <div class="inline-pad">
-        <h5 class="inline">Price:</h5>   <p  class="inline"><%= number_to_currency(@product.price/100.to_f) %></p>
-      </div>
+      <div class="col-12 col-sm-6 product_info">
+        <div class="inline-pad">
+          <h5 class="inline">Description:</h5>   <p  class="inline"> <%= @product.description %></p>
+        </div>
+        <div class="inline-pad">
+          <h5 class="inline">Type: </h5>   <p  class="inline"><%= @product.birdtype %></p>
+        </div>
+        <div class="inline-pad">
+          <h5 class="inline">Price:</h5>   <p  class="inline"><%= number_to_currency(@product.price/100.to_f) %></p>
+        </div>
         <div>
           <% if !@product.comments.empty? %>
-          <h5>Review from a good customer:</h5><p class="comment_quote">"<%= @product.highest_rating_comment.body%>"</p>
-        </div>
-        <div>
-          <h5>Review from some jerk: </h5> <p class="comment_quote">"<%= @product.lowest_rating_comment.body%>"</p>
-        </div>
-        <div id="average_rating">
-          <h5>Average Bird Score: </h5><div class="rated" data-score="<%= @product.average_rating %>"></div>
-        </div>
+            <h5>Review from a good customer:</h5><p class="comment_quote">"<%= @product.highest_rating_comment.body%>"</p>
+          </div>
+          <div>
+            <h5>Review from some jerk: </h5> <p class="comment_quote">"<%= @product.lowest_rating_comment.body%>"</p>
+          </div>
+          <div id="average_rating">
+            <h5>Average Bird Score: </h5><div class="rated" data-score="<%= @product.average_rating %>"></div>
+          </div>
         <% end %>
+<% end %>
         <div class="editing_options">
           <% if signed_in? && current_user.admin? %>
           <p>

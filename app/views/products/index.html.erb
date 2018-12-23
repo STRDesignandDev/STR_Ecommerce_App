@@ -1,12 +1,13 @@
 <h1>Birds</h1>
-
-<div>
-  <div class="row">
-    <% @products.each do |product| %>
-      <%= render product %>
-    <% end %>
+<% cache(cache_key_for_products) do %>
+  <div>
+    <div class="row">
+      <% @products.each do |product| %>
+        <%= render product %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 <% if signed_in? && current_user.admin? %>
   <%= link_to 'New Product', new_product_path, class: "admincreate_text" %>
 <% end %>
