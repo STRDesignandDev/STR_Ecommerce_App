@@ -15,22 +15,22 @@ class OrdersController < ApplicationController
 
 # POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg
 
-  def create
-    # byebug
-    @product = Product.find(params[:product_id])
-    @user = current_user
-    @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @product, notice: 'Bird Added to Cart' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html {redirect_to products_path, alert: 'Bird not added to cart' }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   # byebug
+  #   @product = Product.find(params[:product_id])
+  #   @user = current_user
+  #   @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
+  # 
+  #   respond_to do |format|
+  #     if @order.save
+  #       format.html { redirect_to @product, notice: 'Bird Added to Cart' }
+  #       format.json { render :show, status: :created, location: @product }
+  #     else
+  #       format.html {redirect_to products_path, alert: 'Bird not added to cart' }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
 # END BAD CODE
 
