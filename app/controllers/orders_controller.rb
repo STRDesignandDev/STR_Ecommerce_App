@@ -15,12 +15,12 @@ class OrdersController < ApplicationController
 
 # POTENTIALLY BAD CODE NOT TO USE - comment out if this doesn't work out, dawg
 
-  # def create
+  def create
   #   # byebug
   #   @product = Product.find(params[:product_id])
   #   @user = current_user
   #   @order = Order.new(product_id: @product.id, user_id: @user.id, total: @product.price)
-  # 
+  #
   #   respond_to do |format|
   #     if @order.save
   #       format.html { redirect_to @product, notice: 'Bird Added to Cart' }
@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   #       format.json { render json: @order.errors, status: :unprocessable_entity }
   #     end
   #   end
-  # end
+  end
 
 # END BAD CODE
 
