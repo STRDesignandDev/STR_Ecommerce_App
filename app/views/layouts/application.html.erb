@@ -32,6 +32,7 @@
         <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
         <li class="nav-item"><%= link_to "Shop", products_path %></li>
         <li class="nav-item"><%= link_to "Orders", orders_path %></li>
+        <li class="nav-item"><p class="order_count"><%= @order_count %></p></li>
         <li class="nav-item"><%= link_to "Account", users_path %></li>
         <% if user_signed_in? %>
           <li class="nav-item">
@@ -53,6 +54,7 @@
           <li class="nav-item"><%= link_to "Account", users_path %></li>
           <li class="mobile_nav-item"><%= link_to "Shop", products_path %></li>
           <li class="mobile_nav-item"><%= link_to "Orders", orders_path %></li>
+          <li class="mobile_nav-item"><p class="order_count"><%= @order_count %></p></li>
           <% if user_signed_in? %>
             <li class="mobile_nav-item">
               <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
@@ -80,6 +82,7 @@
       <div class="contentwrapper">
         <%= yield %>
       </div>
+
 
     </div>  <!-- end wrapper -->
 
