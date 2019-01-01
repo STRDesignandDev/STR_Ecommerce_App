@@ -436,8 +436,19 @@ margin-bottom: 0px;
 
 
 #order-body{
-  padding:20px!important;
+  padding:5px!important;
   border: .5px solid grey;
+  width: 100%;
+}
+
+#order-body img{
+  width: 15%;
+  float: left;
+  margin-right: 3%;
+}
+
+.bird-order-price{
+  float: right;
 }
 
 .editing_options{
