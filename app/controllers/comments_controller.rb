@@ -9,9 +9,10 @@ load_and_authorize_resource
 
     respond_to do |format|
       if @comment.save
+        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @product.average_rating
         format.html { redirect_to @product, notice: 'Bird review submitted!' }
         format.json { render :show, status: :created, location: @product }
-        format.js
+        # format.js
       else
         format.html { redirect_to @product, alert: 'Bird comment and bird score required.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

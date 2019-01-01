@@ -248,9 +248,10 @@ html, body {
 }
 
 .bird_welcome img{
-  width: 100%;
+  width: 80%;
   height: auto;
   z-index: 1;
+  margin-left: 10%;
 }
 
 .first_bird{
@@ -677,8 +678,22 @@ input[type=checkbox]{
 .order_count{
   color: white;
   background-color: red;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 10px;
-  font-size: 1.2em;
+  padding: 3px;
+  border-radius: 20px;
+  font-size: .8em;
+  font-weight: 600;
+  bottom: 10px;
+  position: relative;
+}
+
+.order_count_mobile {
+  color: white;
+  background-color: red;
+  padding: 3px;
+  border-radius: 20px;
+  font-size: .4em;
+  font-weight: 600;
+  bottom: 15px;
+  position: relative;
+  left: 5px;
 }

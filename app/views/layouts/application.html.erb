@@ -2,17 +2,15 @@
 <html>
   <head>
     <title>What Do We Sell?</title>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Luckiest+Guy|Quicksand|Amaranth|Alegreya+Sans+SC" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
@@ -21,28 +19,27 @@
   <div class="wrapper">
     <nav class="header">
       <div class="logo">
-        <%= image_tag("whatdoweselllogo.svg", class: "img-responsive") %>
+        <%= link_to image_tag("whatdoweselllogo.svg", class: "img-responsive"),simple_pages_index_path %>
       </div>
       <div class="mobile_logo">
-        <%= image_tag("whatdoweselllogo_mobile.svg", class: "img-responsive") %>
+        <%= link_to image_tag("whatdoweselllogo_mobile.svg", class: "img-responsive"),simple_pages_index_path %>
       </div>
       <ul class="topnav desk_nav">
-        <li class="nav-item"><%= link_to "Home", simple_pages_index_path %></li>
         <li class="nav-item"><%= link_to "About", simple_pages_about_path %></li>
         <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
         <li class="nav-item"><%= link_to "Shop", products_path %></li>
-        <li class="nav-item"><%= link_to "Bird Box", orders_path %></li>
         <% if user_signed_in? %>
-          <li class="nav-item"><p class="order_count"><%= @order_count %></p></li>
+          <li class="nav-item"><%= link_to "Bird Box", orders_path %></li>
+          <li class="nav-item"><span class="order_count"><%= @order_count %></span></li>
+          <li class="nav-item"><%= link_to "Account", users_path %></li>
         <% end %>
-        <li class="nav-item"><%= link_to "Account", users_path %></li>
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           </li>
           <% else %>
           <li class="nav-item">
-            <%= link_to('Login', new_user_session_path) %>
+            <%= link_to('Login/Sign Up', new_user_session_path) %>
           </li>
           <% end %>
       </ul>
@@ -50,20 +47,21 @@
       <div class="mobile_nav_wrapper">
         <%= image_tag("nav_close.svg", class: "nav_close") %>
         <ul class="mobile_nav">
-          <li class="mobile_nav-item"><%= link_to "Home", simple_pages_index_path %></li>
           <li class="mobile_nav-item"><%= link_to "About", simple_pages_about_path %></li>
           <li class="mobile_nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
-          <li class="nav-item"><%= link_to "Account", users_path %></li>
           <li class="mobile_nav-item"><%= link_to "Shop", products_path %></li>
-          <li class="mobile_nav-item"><%= link_to "Orders", orders_path %></li>
-          <li class="mobile_nav-item"><p class="order_count"><%= @order_count %></p></li>
+          <% if user_signed_in? %>
+            <li class="mobile_nav-item"><%= link_to "Account", users_path %></li>
+            <li class="mobile_nav-item"><%= link_to "Bird Box", orders_path %><span class="order_count_mobile"><%= @order_count %></span></li>
+
+          <% end %>
           <% if user_signed_in? %>
             <li class="mobile_nav-item">
               <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
             </li>
             <% else %>
             <li class="mobile_nav-item">
-              <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+              <%= link_to('Login/Sign Up', new_user_session_path, class: "nav-link") %>
             </li>
             <% end %>
         </ul>
@@ -73,6 +71,12 @@
 
 
     <nav class="searchbar">
+      <div class="dropdowns">
+        <ul class="topnav">
+          <li class="nav-item">Styles</li>
+          <li class="nav-item">Price Range</li>
+        </ul>
+      </div>
       <div class="searchbox">
         <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
           <%= form.text_field :q, id: 'q', value: params[:q] %>
@@ -94,8 +98,9 @@
       </div>
     </footer>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= custom_bootstrap_flash %>
+
 
   </body>
 </html>
