@@ -10,7 +10,7 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
-                    
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -103,5 +103,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'whatdowesell.herokuapp.com' }
+
+  config.web_socket_server_url = "wss://your-app-name.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://your-app-name.herokuapp.com', 'http://whatdowesell.herokuapp.com']
 
 end

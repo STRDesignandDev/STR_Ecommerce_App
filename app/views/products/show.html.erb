@@ -1,7 +1,6 @@
 <% cache @product do %>
   <h1><%= @product.name %></h1>
     <h5>Bird Watchers: <%= @product.views %><h5>
-      <div class="alert alert-info" style="display:none" role="alert"><p>A new bird score was posted!<p></div>
   <div class="row">
     <div class="col-12 col-sm-6">
       <div class="product_body">
@@ -74,6 +73,7 @@
 
 
     <div class="col-12">
+      <div class="alert alert-info" style="display:none" role="alert"><p>A new bird score was posted!<p></div>
 
       <%= render 'comments' %>
       <%= render 'new_comment' %>
