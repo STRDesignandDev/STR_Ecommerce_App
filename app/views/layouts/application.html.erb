@@ -71,18 +71,40 @@
 
 
     <nav class="searchbar">
-      <div class="dropdowns">
-        <ul class="topnav">
-          <li class="nav-item">Styles</li>
-          <li class="nav-item">Price Range</li>
-        </ul>
-      </div>
-      <div class="searchbox">
-        <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-          <%= form.text_field :q, id: 'q', value: params[:q] %>
-          <%= form.submit 'Search' %>
-        <% end %>
-      </div>
+      <ul class="search_items">
+        <li class="searchbox">
+          <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+            <%= form.text_field :q, id: 'q', value: params[:q] %>
+            <%= form.submit 'Search' %>
+          <% end %>
+        </li>
+        <li class="style_select">
+          <h4>Shop Styles<%= image_tag("arrow_down.png", style: "padding-right: 10px; padding-left: 8px;") %></h4>
+        </li>
+        <div class="style_dropdown">
+          <div class="dropdown_menu">
+              <%= link_to "Good", products_path(birdtype: 'good') %>
+              <%= link_to "Bad", products_path(birdtype: 'bad') %>
+              <%= link_to "Smart", products_path(birdtype: 'smart') %>
+              <%= link_to "Dumb", products_path(birdtype: 'dumb') %>
+              <%= link_to "Cheap", products_path(birdtype: 'cheap') %>
+              <%= link_to "Expensive", products_path(birdtype: 'expensive') %>
+          </div>
+        </div>
+        <li class="price_select">
+          <h4>Shop Prices<%= image_tag("arrow_down.png", style: "padding-right: 10px; padding-left: 8px;") %></h4>
+        </li>
+        <div class="price_dropdown">
+          <div class="dropdown_menu">
+              <%= link_to "5", products_path(birdtype: 'good') %>
+              <%= link_to "100", products_path(birdtype: 'bad') %>
+              <%= link_to "500", products_path(birdtype: 'smart') %>
+              <%= link_to "1000", products_path(birdtype: 'dumb') %>
+              <%= link_to "2500", products_path(birdtype: 'cheap') %>
+              <%= link_to "5000+", products_path(birdtype: 'expensive') %>
+          </div>
+        </div>
+      </ul>
     </nav>
 
       <div class="contentwrapper">
@@ -104,3 +126,15 @@
 
   </body>
 </html>
+
+
+
+
+<!-- <li class="dropdown">
+  <div class="dropdown_menu">
+    <%#= form_with(url: products_path, method: 'get', local: true) do |form| %>
+      <%#= form.select :birdtype, [['Good','good'],['Bad','bad'],['Smart','smart'], ['Dumb','dumb'],['Cheap','cheap'],['Expensive','expensive']], {include_blank:"Shop Styles"}%>
+      <%= image_tag("arrow_down.png", style: "padding-right: 10px; padding-top: 8px;") %>
+    <#% end %>
+  </div>
+</li> -->

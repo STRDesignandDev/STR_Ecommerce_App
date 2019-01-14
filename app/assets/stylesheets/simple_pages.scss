@@ -106,17 +106,115 @@ html, body {
   z-index: 20;
 }
 
-.searchbox{
+.searchbar li{
+  display: inline-block;
+  list-style-type: none;
   float: right;
+}
+
+.searchbox{
   padding-top: 6px;
   padding-right: 6px;
-  border-radius: 4px;
 }
 
 .searchbox input{
-  border-radius: 10px;
+  border: none;
 }
 
+.searchbox input[type="submit"]{
+  background-color: Black;
+  color: white;
+  border: none;
+}
+
+.search_items{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  padding-top: 2px;
+  padding-right: 15px;
+  display: block;
+}
+
+.style_dropdown{
+  color: white;
+  font-size: 1.2em;
+  padding-top: 4px;
+  padding-right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: 35px;
+  padding-left: 20px;
+  margin-right: 10px;
+  width: 35%;
+  display: none;
+}
+
+.price_dropdown{
+  color: white;
+  font-size: 1.2em;
+  padding-top: 4px;
+  padding-right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: 35px;
+  padding-left: 20px;
+  margin-right: 10px;
+  width: 35%;
+  display: none;
+}
+
+
+.dropdown_menu a{
+  display: block;
+  font-size: 1.2em;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 30px;
+  color: white;
+
+
+  /* border-bottom-left-radius: 0px; */
+}
+
+.style_select{
+  display: inline-block;
+  float: right;
+  padding-right: 10px;
+}
+
+.style_select img{
+  display: inline;
+}
+
+.style_select h4{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4em;
+  margin-top: 7px;
+  padding-left: 3px;
+}
+
+.price_select{
+  display: inline-block;
+  float: right;
+  padding-right: 10px;
+}
+
+.price_select img{
+  display: inline;
+}
+
+.price_select h4{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4em;
+  margin-top: 7px;
+  padding-left: 3px;
+}
+
+.dropdown_menu ul{
+  padding-left: 5px;
+  padding-right: 15px;
+}
 
 .logo{
   width: 33%;
@@ -680,7 +778,7 @@ input[type=checkbox]{
   background-color: red;
   padding: 3px;
   border-radius: 20px;
-  font-size: .8em;
+  font-size: .7em;
   font-weight: 600;
   bottom: 10px;
   position: relative;

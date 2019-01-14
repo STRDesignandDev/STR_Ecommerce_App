@@ -9,6 +9,9 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term).paginate(:page => params[:page], :per_page => 6)
+    elsif params[:birdtype]
+      birdtype = params[:birdtype]
+      @products = Product.find_birdtype(birdtype).paginate(:page => params[:page], :per_page => 6)
     else
       @products = Product.paginate(:page => params[:page], :per_page => 6)
     end

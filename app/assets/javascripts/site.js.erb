@@ -47,3 +47,21 @@ var refreshRating = function() {
   $(function() {
     $(".stripe-button-el").replaceWith('<button type="submit" class="pay" id="buy_bird_now"><img src="/assets/buy_bird_now.svg"></button>');
   });
+
+// DROPDOWN MENU
+
+  $(".style_select").on('click', function() {
+    $('.style_dropdown').toggle();
+    $('.price_dropdown').hide();
+  });
+
+  $(".price_select").on('click', function() {
+    $('.price_dropdown').toggle();
+    $('.style_dropdown').hide();
+  });
+
+// Style select
+
+  $("#birdtype").on('change', function() {
+    this.form.submit();
+  });

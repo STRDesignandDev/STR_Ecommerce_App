@@ -6,9 +6,15 @@ class Product < ApplicationRecord
   def self.search(search_term)
     if Rails.env.production?
       Product.where("name ilike ?", "%#{search_term}%")
+      # Product.where("name ilike ? OR description ilike ? ", "%#{search_term}%", "%#{search_term}%")
     else
       Product.where("name LIKE ?", "%#{search_term}%")
     end
+  end
+
+  def self.find_birdtype(birdtype)
+    search_verb = Rails.env.production? ? "ilike" : "LIKE"
+    Product.where("birdtype #{search_verb} ?", "%#{birdtype}%")
   end
 
   def highest_rating_comment
