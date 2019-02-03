@@ -62,7 +62,9 @@
       <div class="shop_collections">
         <div class="row">
 
+
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'good') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -74,8 +76,10 @@
               </div>
             </div>
           </div>
+          <% end %>
 
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'bad') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -87,8 +91,10 @@
               </div>
             </div>
           </div>
+          <% end %>
 
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'smart') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -100,8 +106,10 @@
               </div>
             </div>
           </div>
+          <% end %>
 
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'dumb') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -113,8 +121,10 @@
               </div>
             </div>
           </div>
+          <% end %>
 
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'cheap') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -126,8 +136,10 @@
               </div>
             </div>
           </div>
+          <% end %>
 
           <div class="collection col-sm-6">
+            <%= link_to products_path(birdtype: 'expensive') do %>
             <div class="collection_wrapper">
               <div class="row">
                 <div class="col-6 collection_text">
@@ -139,6 +151,7 @@
               </div>
             </div>
           </div>
+          <% end %>
 
         </div>
       </div>
