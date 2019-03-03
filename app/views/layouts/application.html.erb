@@ -80,30 +80,30 @@
         </li>
         <li class="style_select">
           <h4>Shop Styles<%= image_tag("arrow_down.png", style: "padding-right: 10px; padding-left: 8px;") %></h4>
-        </li>
-        <div class="style_dropdown">
-          <div class="dropdown_select">
-              <%= link_to "Good", products_path(birdtype: 'good') %>
-              <%= link_to "Bad", products_path(birdtype: 'bad') %>
-              <%= link_to "Smart", products_path(birdtype: 'smart') %>
-              <%= link_to "Dumb", products_path(birdtype: 'dumb') %>
-              <%= link_to "Cheap", products_path(birdtype: 'cheap') %>
-              <%= link_to "Expensive", products_path(birdtype: 'expensive') %>
+          <div class="style_dropdown">
+            <div class="dropdown_select">
+                <%= link_to "Good", products_path(birdtype: 'good') %>
+                <%= link_to "Bad", products_path(birdtype: 'bad') %>
+                <%= link_to "Smart", products_path(birdtype: 'smart') %>
+                <%= link_to "Dumb", products_path(birdtype: 'dumb') %>
+                <%= link_to "Cheap", products_path(birdtype: 'cheap') %>
+                <%= link_to "Expensive", products_path(birdtype: 'expensive') %>
+            </div>
           </div>
-        </div>
+        </li>
         <li class="price_select">
           <h4>Shop Prices<%= image_tag("arrow_down.png", style: "padding-right: 10px; padding-left: 8px;") %></h4>
-        </li>
-        <div class="price_dropdown">
-          <div class="dropdown_select">
-              <%= link_to "5", products_path(price: 'price_teir1') %>
-              <%= link_to "100", products_path(birdtype: 'bad') %>
-              <%= link_to "500", products_path(birdtype: 'smart') %>
-              <%= link_to "1000", products_path(birdtype: 'dumb') %>
-              <%= link_to "2500", products_path(birdtype: 'cheap') %>
-              <%= link_to "5000+", products_path(birdtype: 'expensive') %>
+          <div class="price_dropdown">
+            <div class="dropdown_select">
+                <%= link_to "5", products_path(price: 'price_teir1') %>
+                <%= link_to "100", products_path(birdtype: 'bad') %>
+                <%= link_to "500", products_path(birdtype: 'smart') %>
+                <%= link_to "1000", products_path(birdtype: 'dumb') %>
+                <%= link_to "2500", products_path(birdtype: 'cheap') %>
+                <%= link_to "5000+", products_path(birdtype: 'expensive') %>
+            </div>
           </div>
-        </div>
+        </li>
       </ul>
     </nav>
 
