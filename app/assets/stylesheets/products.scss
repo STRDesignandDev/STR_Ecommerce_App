@@ -1,9 +1,14 @@
-
-.product_info h5{
+h1{
   font-family: 'Alegreya Sans SC', sans-serif;
   color: #7c870e;
-  margin-bottom: .5em;
-  font-weight: 500;
+}
+
+
+h5{
+  font-family: 'Alegreya Sans SC', sans-serif!important;
+  color: #7c870e!important;
+  margin-bottom: .5em!important;
+  font-weight: 500!important;
 }
 
 .product_body{
@@ -157,11 +162,13 @@
   margin-right: 5px;
   width: 30%;
   display: inline-block;
+  height: 50px;
+  float: right;
 }
 
 .shopping_options_btn img{
   width: 100%;
-  height: auto;
+  height: 40px;
 }
 
 #buy_bird_now button{

@@ -1,7 +1,7 @@
 <% cache @product do %>
   <h1><%= @product.name %></h1>
     <!-- <h5>Bird Watchers: <%= @product.views %><h5> -->
-  <div class="row" data-product-id="<%= @product.id %>">
+  <div class="row">
     <div class="col-12 col-sm-6">
       <div class="product_body">
         <div><%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url)%></div>
@@ -55,12 +55,12 @@
 
 <!-- END POTENTIALLY BAD CODE -->
 
-          <div class="shopping_options_btn" id="buy_bird_now">
+          <!-- <div class="shopping_options_btn" id="buy_bird_now">
             <%= form_with(url: '/payments/create') do |form| %>
             <%= render partial: "shared/stripe_checkout_button" %>
             <%= hidden_field_tag(:product_id, @product.id) %>
             <% end %>
-          </div>
+          </div> -->
 
           <div class="shopping_options_btn">
             <%= link_to image_tag("keep_shopping.svg"), products_path %>

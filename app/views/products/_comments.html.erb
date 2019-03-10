@@ -1,7 +1,7 @@
 <div class="pad_top">
   <h2>Customer Reviews</h2>
   <% if @comments.empty? %>
-    <h5>Sorry, no reviews for this bird yet.  Be the first to tell us what you think!</h5>
+    <h4>Sorry, no reviews for this bird yet.  Be the first to tell us what you think!</h5>
   <% end %>
 </div>
 <div class="customer-reviews">
@@ -11,7 +11,7 @@
 </div>
 <% if !@comments.empty? %>
   <div class="page_bar">
-    
+
     <%= will_paginate @comments %>
   </div>
 <% end %>
