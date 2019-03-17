@@ -18,7 +18,7 @@ var refreshRating = function() {
 
   $(document).on('turbolinks:load ajaxSuccess', function() {
       refreshRating();
-  });
+
 
 
 // Mobile Nav
@@ -65,3 +65,4 @@ var refreshRating = function() {
   $("#birdtype").on('change', function() {
     this.form.submit();
   });
+});
