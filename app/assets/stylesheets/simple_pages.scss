@@ -37,7 +37,7 @@ p, a{
 a:hover{
   background-color: transparent;
   text-decoration: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -121,11 +121,36 @@ html, body {
   border: none;
 }
 
+@media (max-width: 850px) {
+  .searchbox input{
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .birdbox_mobile{
+    display: inline-block!important;
+  }
+}
+
+.birdbox_mobile{
+  display:none;
+  float: right;
+  margin-right: 50px;
+  margin-top: 7px;
+}
+
+.birdbox_mobile img{
+  width: 35px;
+}
+
 .searchbox input[type="submit"]{
   background-color: Black;
   color: white;
   border: none;
 }
+
+
 
 .search_items{
   margin: 0;
@@ -780,6 +805,8 @@ input[type=checkbox]{
   color: white;
   background-color: red;
   padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
   border-radius: 20px;
   font-size: .7em;
   font-weight: 600;
@@ -791,12 +818,28 @@ input[type=checkbox]{
   color: white;
   background-color: red;
   padding: 3px;
-  border-radius: 20px;
-  font-size: .4em;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 25px;
+  font-size: .7em;
   font-weight: 600;
-  bottom: 15px;
   position: relative;
-  left: 5px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.order_count_mobile_menu {
+  color: white;
+  background-color: red;
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 25px;
+  font-size: .7em;
+  font-weight: 600;
+  position: relative;
+  left: 10px;
+  bottom: 10px;
 }
 
 // .alert-info{

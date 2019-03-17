@@ -31,6 +31,7 @@
         <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "Bird Box", orders_path %></li>
           <li class="nav-item"><span class="order_count"><%= @order_count %></span></li>
+
           <li class="nav-item"><%= link_to "Account", users_path %></li>
         <% end %>
         <% if user_signed_in? %>
@@ -43,6 +44,8 @@
           </li>
           <% end %>
       </ul>
+      <div class="birdbox_mobile"><%= link_to image_tag("birdbox.svg"), orders_path %>
+      <span class="order_count_mobile"><%= @order_count %></span></div>
       <%= image_tag("hamburger.svg", class: "hamburger") %>
       <div class="mobile_nav_wrapper">
         <%= image_tag("nav_close.svg", class: "nav_close") %>
@@ -52,7 +55,7 @@
           <li class="mobile_nav-item"><%= link_to "Shop", products_path %></li>
           <% if user_signed_in? %>
             <li class="mobile_nav-item"><%= link_to "Account", users_path %></li>
-            <li class="mobile_nav-item"><%= link_to "Bird Box", orders_path %><span class="order_count_mobile"><%= @order_count %></span></li>
+            <li class="mobile_nav-item"><%= link_to "Bird Box", orders_path %><span class="order_count_mobile_menu"><%= @order_count %></span></li>
 
           <% end %>
           <% if user_signed_in? %>
@@ -116,7 +119,7 @@
 
     <footer class="footer">
       <div class="footer_content">
-        <p>&copy; STR Design & Dev 2018 All Rights Reserved</p>
+        <p>&copy; STR Design & Dev 2018 - <%= Date.today.year %> All Rights Reserved</p>
       </div>
     </footer>
 
