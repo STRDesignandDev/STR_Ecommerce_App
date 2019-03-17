@@ -13,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -44,8 +46,10 @@
           </li>
           <% end %>
       </ul>
+      <% if user_signed_in? %>
       <div class="birdbox_mobile"><%= link_to image_tag("birdbox.svg"), orders_path %>
       <span class="order_count_mobile"><%= @order_count %></span></div>
+      <% end %>
       <%= image_tag("hamburger.svg", class: "hamburger") %>
       <div class="mobile_nav_wrapper">
         <%= image_tag("nav_close.svg", class: "nav_close") %>
