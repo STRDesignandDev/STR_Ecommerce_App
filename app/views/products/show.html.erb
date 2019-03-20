@@ -55,26 +55,23 @@
 
 <!-- END POTENTIALLY BAD CODE -->
 
+          <div class="shopping_options_btn" id="buy_bird_now">
+            <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
+            <% end %>
+          </div>
 
-            <div class="shopping_options_btn">
-              <%= link_to image_tag("keep_shopping.svg"), products_path %>
-            </div>
+          <div class="shopping_options_btn">
+            <%= link_to image_tag("keep_shopping.svg"), products_path %>
+          </div>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <div style="float:right">
-         <%= form_with(url: '/payments/create') do |form| %>
-         <%= render partial: "shared/stripe_checkout_button" %>
-         <%= hidden_field_tag(:product_id, @product.id) %>
-         <% end %>
-       </div>
-      </div>
-    </div>
+
 
 
     <div class="col-12">

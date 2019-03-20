@@ -21,6 +21,10 @@ class Product < ApplicationRecord
     comments.rating_desc.first
   end
 
+  def order_total_price
+    price.sum
+  end
+
   def views
     $redis.get("product:#{id}")
   end

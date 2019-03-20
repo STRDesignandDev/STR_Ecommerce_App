@@ -555,6 +555,7 @@ html, body {
 
 .form-style textarea{
   width: 100%;
+  padding-right: 10px;
 }
 
 div.field, div.actions {
@@ -565,13 +566,11 @@ margin-bottom: 0px;
 #order-body{
   padding:5px!important;
   border: .5px solid grey;
-  width: 100%;
+  margin-right: 10%;
 }
 
 #order-body img{
-  width: 15%;
-  float: left;
-  margin-right: 3%;
+  max-height:85px;
 }
 
 .bird-order-price{

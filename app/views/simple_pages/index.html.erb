@@ -30,15 +30,15 @@
 
 
   <div class="specials">
-    <h1>Birds of the Day!</h1>
-    <h3>Get 'em whilst they hot!</h3>
+    <h1>Bird of the Day!</h1>
+    <h3>Get him whilst he hot!</h3>
     <div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
+          <!-- <ol class="carousel-indicators">
             <% @products.each do |product| %>
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="<%= " active" if product == @products.first %>"></li>
             <% end %>
-          </ol>
+          </ol> -->
             <div class="carousel-inner">
               <% @products.each do |product| %>
                 <div class="carousel-item<%= " active" if product == @products.first %>">

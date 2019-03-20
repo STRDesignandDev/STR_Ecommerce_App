@@ -6,9 +6,9 @@ class Order < ApplicationRecord
 end
 
 def order_total
-    @orders.count
+  @orders.count
 end
 
 def order_total_price
-    @orders.product.sum(:price)
+  @order = Product.sum(:price)
 end

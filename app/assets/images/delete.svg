@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="9.984px" height="10px" viewBox="0 0 9.984 10" enable-background="new 0 0 9.984 10" xml:space="preserve">
-<g>
-	<path fill="#FF0000" d="M6.971,4.714L9.984,10H6.291L5.765,8.778L4.868,7.156L3.725,8.934L3.23,10H0.093l2.968-4.807L0,0h3.709
-		L4.25,1.252l0.881,1.577l1.005-1.747L6.6,0h3.23L6.971,4.714z"/>
-</g>
+	 viewBox="0 0 4.9 4.9" style="enable-background:new 0 0 4.9 4.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF0000;}
+</style>
+<rect x="-0.4" y="1.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.0191 2.4602)" class="st0" width="5.7" height="1.2"/>
+<rect x="-0.4" y="1.8" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.4602 5.9395)" class="st0" width="5.7" height="1.2"/>
 </svg>

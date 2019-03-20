@@ -1,21 +1,131 @@
-<h1>Bird Box</h1>
 <div class="row">
-  <% @orders.each do |order| %>
-    <div class="col-sm-6 col-md-6" id="order-body">
-      <%= link_to image_tag(order.product.image_url, class: "img-fluid"), order %>
-      <h5>
-        <%=order.product.name%>
-      </h5>
-      <p><%= order.product.description %></p>
-      <strong><%= number_to_currency(order.product.price/100.to_f) %></strong>
-      <div>
-        <%= link_to 'Keep Shopping |', products_path %>
-        <%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %><!-- /col -->
+  <div class="col-md-6" style="padding-right:10%;">
+    <h1>Bird Box</h1>
+    <% @orders.each do |order| %>
+      <div  id="order-body" class="row">
+
+        <div class="col-3">
+          <%= link_to image_tag(order.product.image_url, class: "img-fluid") %>
+        </div>
+
+        <div class="col-6">
+          <h5 style="padding-left:5px;">
+            <%=order.product.name%>
+          </h5>
+          <p style="padding-left:5px;"><%= order.product.description %></p>
+        </div>
+
+        <div class="col-3">
+          <div style="float:right; text-align:right;">
+            <strong><h5>Price:</h5><%= number_to_currency(order.product.price/100.to_f) %></strong>
+            <br>
+            <div style="margin-top:15px;margin-left:25px; width:15px;">
+              <%= link_to image_tag( "delete.svg").html_safe, order, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+            <!-- /col -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div style="padding-left:35px;padding-right:35px;">
+      <h1>Order Summary</h1>
+
+      <div style="border-top:1px solid black;border-bottom:1px solid black;padding-top:15px; text-align:right;">
+        <h5 style="font-size:1.8em">Birds in Cart: <p style="display:inline;font-size:1em"><%=order_total%></p></h5>
+        <h5 style="font-size:1.8em">Grand Total: <p style="display:inline;font-size:1em">$<%= Order.where("user_id = ?", current_user.id).sum("total")/100.to_f  %></p></h5>
       </div>
     </div>
-  <% end %>
-</div>
-<h1>Order Summary</h1>
-<div class="row">
-  <h3>Birds in Cart: <%=order_total%>
+
+    <div style="padding-left:35px;padding-right:35px;padding-top:15px;">
+      <h1>Shipping Information</h1>
+      <div style="padding-top:15px">
+        <div class="form-group form-row">
+
+            <div class="form-control col-sm-6">
+              <div class="form-style">
+                <label for="fname"> First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Mr. Bird">
+              </div>
+            </div>
+
+            <div class="form-control col-sm-6">
+              <div class="form-style">
+                <label for="fname"> Last Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Lover">
+              </div>
+            </div>
+
+            <div class="form-control col-sm-12">
+              <div class="form-style">
+                <label for="fname"> Street Address</label>
+                <input type="text" id="fname" name="firstname" placeholder="123 Street Apt 2">
+              </div>
+            </div>
+
+            <div class="form-control col-sm-4">
+              <div class="form-style">
+                <label for="fname"> City</label>
+                <input type="text" id="fname" name="firstname" placeholder="Bird City">
+              </div>
+            </div>
+
+            <div class="form-control col-sm-4">
+              <div class="form-style">
+                <label for="fname"> State</label>
+                <input type="text" id="fname" name="firstname" placeholder="Bird State">
+              </div>
+            </div>
+
+            <div class="form-control col-sm-4">
+              <div class="form-style">
+                <label for="fname"> Zip Code</label>
+                <input type="text" id="fname" name="firstname" placeholder="12345">
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div style="padding-left:35px;padding-right:35px;padding-top:15px;">
+      <h1>Billing Information</h1>
+      <p class="tiny-disclaimer">(birds are not actually real)</p>
+
+      <div style="padding-top:15px">
+        <div class="form-group form-row">
+
+          <div class="form-control col-sm-12">
+            <div class="form-style">
+              <label for="fname"> CC/Debit Number</label>
+              <input type="text" id="fname" name="firstname" placeholder="Seriously?">
+            </div>
+          </div>
+
+          <div class="form-control col-sm-6">
+            <div class="form-style">
+              <label for="fname">Expiration</label>
+              <input type="text" id="fname" name="firstname" placeholder="Don't!">
+            </div>
+          </div>
+
+          <div class="form-control col-sm-6">
+            <div class="form-style">
+              <label for="fname"> CV2</label>
+              <input type="text" id="fname" name="firstname" placeholder="Do it!">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>
