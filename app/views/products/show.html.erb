@@ -60,6 +60,13 @@
             <%= link_to image_tag("keep_shopping.svg"), products_path %>
           </div>
 
+          <div style="float:right">
+           <%= form_with(url: '/payments/create') do |form| %>
+           <%= render partial: "shared/stripe_checkout_button" %>
+           <%= hidden_field_tag(:product_id, @product.id) %>
+           <% end %>
+         </div>
+
           </div>
         </div>
       </div>
@@ -67,8 +74,6 @@
 
 
     <div class="col-12">
-      <div class="alert alert-info" style="display:none" role="alert"><p>A new bird score was posted!<p></div>
-
       <%= render 'comments' %>
       <%= render 'new_comment' %>
     </div>
