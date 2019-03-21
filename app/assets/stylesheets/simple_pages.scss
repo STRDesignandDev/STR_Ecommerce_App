@@ -482,29 +482,48 @@ html, body {
 }
 
 .remove_order_item a{
-  font-size: 1.1em!important;
-  color: red!important;
-  font-style: italic!important;
+  width: 15px;
+  float: right;
 }
 
 .expert_bird{
   position: fixed;
   bottom:0px;
-  right:0px;
-  z-index: 5;
+  right:-50px;
+  z-index: 2;
 }
+
+.expert_bird img{
+  width: 75%;
+  z-index: 4;
+}
+
 
 .bird_chat {
   position: fixed;
-  background-color: black;
-  padding: 7px 30px 0px 15px;
-  bottom: 0px;
-  width: 80;
-  right: 0;
+  bottom: 120px;
+  right: 100px;
+  z-index: 1;
 }
 
 .bird_chat p{
   color: white;
+}
+
+.box_only img{
+  width:105px;
+  float: left;
+  padding-left: 15px;
+}
+
+.order_summary{
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+  padding-top:8px;
+  text-align:right;
+  min-height: 85px;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 
 .first_bird img{
@@ -591,13 +610,17 @@ margin-bottom: 0px;
 
 #order-body{
   padding:5px!important;
-
   margin-right: 10%;
 }
 
-#order-body img{
-  max-height:85px;
+.checkout{
+  width: 30%;
+  float: right;
 }
+
+// #order-body img{
+//   max-height:95px;
+// }
 
 .bird-order-price{
   float: right;
