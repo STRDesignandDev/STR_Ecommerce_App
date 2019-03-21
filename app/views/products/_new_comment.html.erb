@@ -1,5 +1,6 @@
 
-  <div class="pad_top">
+
+<div class="pad_top">
     <h2>Add a review:</h2>
       <div class="product-reviews-form">
         <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
@@ -9,7 +10,7 @@
               <%= f.text_area :body %>
             </div>
             <div class="col-12 col-sm-6">
-              <h4>Bird Scoring</h4>
+              <h4>Bird Score</h4>
               <div class="rating"></div>
             </div>
             <div class="col-12 col-sm-12">
