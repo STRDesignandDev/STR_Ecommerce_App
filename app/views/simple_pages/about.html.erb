@@ -1,5 +1,58 @@
 
 <% cache do %>
-  <h1>Read about the store</h1>
-  <p>This is a store or shop or what have you</p>
+  <h1>Our Story</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <p  style="padding-right:25px;">In 1902 our founder Percivle Audobon III received a substantial inheritence from his father's estate. His life long dream was to start his own online business. </p>
+      <br>
+      <p  style="padding-right:25px;">He asked himself, what do we sell? And then, inspiration came when he least expected it. A bird infestation plagued his property, nearly descimating his home. What would he do with all of these nefarious creatures? </p>
+      <br>
+      <p  style="padding-right:25px;">Well the answer was now obvious, Percivol had many birds, and the people need birds. Any quality, and price range, any style. The world rejoiced! The rest my friends, is history.</p>
+    </div>
+    <div class="col-sm-6 percivol">
+      <%= link_to image_tag ("percivol.jpg") %>
+    </div>
+  </div>
+  <h1>The Real Story</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <p  style="padding-right:25px;">In 2018 the real founder, Ryan Strawn, was working as a graphic designer. He grew bored. Design alone didn't offer enough challenge or excitement.</p>
+      <br>
+      <p  style="padding-right:25px;">He enrolled in a full stack coding bootcamp at Career Foundry. His sense of humor got away from him.</p>
+      <br>
+      <p>Nevertheless, he succeeded it creating a clean, functional, and secure example e-commerce site that demonstrated his dedication to learning and advancing in the field of web development.</p>
+      <br>
+    </div>
+    <div class="col-sm-6 percivol">
+      <%= link_to image_tag ("real_story.png") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Technologies Used</h1>
+      <ul>
+        <li>Ruby on Rails</li>
+        <li>AJAX & Action Cable</li>
+        <li>Gems! (Devise, Toastr, Redis)</li>
+        <li>Jquery</li>
+        <li>Javascript</li>
+        <li>SCSS</li>
+        <li>PostgreSQL</li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+    <h1>Project Features</h1>
+      <ul>
+        <li>User Authencation & Authorization</li>
+        <li>CRUD Structure - Admin Abilities</li>
+        <li>Search Queries</li>
+        <li>Mailers</li>
+        <li>Shopping Cart with Notifications</li>
+        <li>Responsive & Mobile Optimized</li>
+        <li>Commenting Functionality</li>
+      </ul>
+    </div>
+  </div>
+
 <% end %>

@@ -8,7 +8,3 @@ end
 def order_total
   @orders.count
 end
-
-def order_total_price
-  @order = Product.sum(:price)
-end

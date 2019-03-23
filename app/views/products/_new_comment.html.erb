@@ -1,5 +1,11 @@
-
-
+<% if !signed_in? %>
+  <div class="login_signup">
+    <h2>Add a review:</h2>
+    <%= link_to image_tag("login_signup.png"), users_path %>
+    <h3 style="padding-top:10px;">Start rating birds today!</h3>
+  </div>
+<% end %>
+<% if signed_in? %>
 <div class="pad_top">
     <h2>Add a review:</h2>
       <div class="product-reviews-form">
@@ -22,3 +28,4 @@
         <% end %>
       </div>
     </div>
+<% end %>
